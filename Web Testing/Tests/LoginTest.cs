@@ -8,21 +8,21 @@ namespace TBExample
 {
 
     [TestFixture]
-    public class LoginPage
+    public class LoginTest
     {
         ChromeDriver chrome = null;
 
-        public LoginPage()
+        public LoginTest()
         {
             chrome = new ChromeDriver();
         }
 
         [Test]
-        public void Login()
+        public void CheckLoginTest()
         {
             LoginPageObject login = new LoginPageObject(chrome);
             login.Login();
-            NUnit.Framework.Assert.IsTrue(login.IsCurrentPage());
+            Assert.IsTrue(login.IsCurrentPage());
         }
 
         [TearDown]
